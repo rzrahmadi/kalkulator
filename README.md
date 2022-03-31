@@ -1,4 +1,3 @@
 # rzrahmadi.github.io
-Tugas Individu Kelas F <br>
-FGA - Front End Developer <br>
+Tugas Individu FGA Front End Developer Kelas F<br>
 Link Github Pages : https://rzrahmadi.github.io/kalkulator/
