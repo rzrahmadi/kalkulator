@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+        <link rel="shortcut icon" href="logo.png">
+        <title>Kalkulator</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="calculator">
+				<div id="result">
+					<input type="text" name="screen" id="answer" readonly>
+				</div>
+				<div id="keyboard">
+					<button class="operator" onclick="clean()"">C</button>
+					<button class="operator" onclick="backspace()">CE</button>
+					<button class="empty" id="empty"></button>
+					<button class="operator" onclick="insert('/')">&#247;</button>
+
+					<button class="number" onclick="insert(7)">7</button>
+					<button class="number" onclick="insert(8)">8</button>
+					<button class="number" onclick="insert(9)">9</button>
+					<button class="operator" onclick="insert('*')">&times;</button>
+
+					<button class="number" onclick="insert(4)">4</button>
+					<button class="number" onclick="insert(5)">5</button>
+					<button class="number" onclick="insert(6)">6</button>
+					<button class="operator" onclick="insert('-')">-</button>
+
+					<button class="number" onclick="insert(1)">1</button>
+					<button class="number" onclick="insert(2)">2</button>
+					<button class="number" onclick="insert(3)">3</button>
+					<button class="operator" onclick="insert('+')">+</button>
+
+					<button class="empty" id="empty"></button>
+                    <button class="number" onclick="insert(0)">0</button>
+                    <button class="empty" id="empty"></button>
+					<button class="operator" onclick="equal()">=</button>
+				</div>
+			</div>
+		</div>
+		<script>
+            document.getElementById('answer').readOnly = true;
+            let screen = document.getElementById('answer');
+            buttons = document.querySelectorAll('button');
+            let screenValue = '';
+
+            function insert(num){
+                screen.value = screen.value + num;
+                console.log(screen.value);
+            }
+
+            function equal(){
+                screen.value = eval(screen.value);
+            }
+
+            function clean(){
+                screen.value = "";
+            }
+
+            function backspace(){
+                screen.value = screen.value.substring(0, screen.value.length -1);
+            }
+        </script>
+	</body>
+</html>
